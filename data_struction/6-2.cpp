@@ -28,10 +28,12 @@ typedef struct{
 void InitGraph(GraphAdjList *G){
     int i,j,k;
     EdgeNode *e;//边表结点，初始开始
-    printf("输入初始顶点数和边数\n");
+    // printf("输入初始顶点数和边数\n");
+    cout<<"测试"<<endl;
+    
+/*
     cin>>(&G->numvertexes);
     cin>>&G->numedges;
-/*
 no operator ">>" matches these operandsC/C++(349)
 6-2.cpp(32, 8): operand types are: std::istream >> int *
 6-2.cpp(32, 8): function "std::basic_istream<_CharT, _Traits>::operator>>(std::basic_istream<_CharT, _Traits>::__streambuf_type *__sb) [with _CharT=char, _Traits=std::char_traits<char>]" does not match because argument #1 does not match parameter
