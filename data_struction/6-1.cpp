@@ -1,7 +1,7 @@
 //图
 //·关于图的存储结构和存储类型
 //·关于图的遍历算法
-    //BFS、DFS
+
 
 #include<iostream>
 using namespace std;
@@ -18,7 +18,7 @@ typedef struct{
 
 typedef struct{
     vertype vexs[maxsize]; //顶点表
-    edgetype arc[maxsize][maxsize]; //邻接矩阵
+    edgetype arc[maxsize][maxsize]; //邻接矩阵表示
     int numver,numedge;
 }Graph;
 
