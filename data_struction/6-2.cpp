@@ -6,6 +6,8 @@ using namespace std;
 typedef char vertype;
 typedef int edgetype;
 
+bool visited[maxsize];
+
 //邻接表表示
 
 typedef struct EdgeNode{//边表结点
@@ -30,6 +32,12 @@ void InitGraph(GraphAdjList *G){
     EdgeNode *e;//边表结点，初始开始
     // printf("输入初始顶点数和边数\n");
     cout<<"测试"<<endl;
+    G->numedges=0;
+    G->numvertexes=0;
+
+    for(int i;i<maxsize;i++){
+        G->adjList[i].firstedge=NULL;
+    }
     
 /*
     cin>>(&G->numvertexes);
@@ -40,52 +48,66 @@ no operator ">>" matches these operandsC/C++(349)
 6-2.cpp(32, 8): function "std::basic_istream<_CharT, _Traits>::operator>>(void *&__p) [with _CharT=char, _Traits=std::char_traits<char>]" does not match because argument #1 does not match parameter
 */
 
-    for(i=0;i<G->numedges;i++){
-        for(j=0;j<G->numvertexes;j++){
-            G->adjList[j];
-        }
-    }
 }
-
-int FirstNeighbor(GraphAdjList G,int v){
+//查找前结点，找到返回结点下标，未找到返回-1
+int FirstNeighbor(GraphAdjList *G,int v){
     
-    if()
-        return v;
+    if(v >= 0 && v < G->numvertexes){
+        if(G->adjList[v].firstedge!=NULL)
+        return G->adjList[v].firstedge->adjvex;//如果是对于
+    }
     else
         return -1;
 }
 
-int NextNeighbor(GraphAdjList G,int v){
-    return -1;
+
+//查找v有无下结点，找到返回结点下标，未找到返回-1
+int NextNeighbor(GraphAdjList *G,int v,bool visited[]){
+    if(v >= 0 && v < G->numvertexes){
+        //node1 的声明应该使用箭头 -> 而不是点 . 来访问结构体成员。
+        //应该写成 EdgeNode *node1 = G->adjList[v].firstedge;，
+        //因为 firstedge 是一个指针
+        EdgeNode *node1 = G->adjList[v].firstedge;
+        while(node1 != NULL){
+            int neighbor = node1->adjvex;
+            if(visited[neighbor] == 0){
+                return neighbor;
+            }
+            node1 = node1->next;
+        }
+        //遍历完毕都没有下一个未访问结点邻居，返回-1
+    }
+    else
+        return -1;
 }
 
 
 //---课后第二题-----------------------------------------------------------------------------------
 
-bool visited[maxsize];
 
-bool Istree(GraphAdjList G){
-    for(int i=0;i<G.numvertexes;i++){
+
+bool Istree(GraphAdjList *G){
+    for(int i=0;i<G->numvertexes;i++){
         visited[i]=false;
     }
     int Vnum=0,Enum=0;
     DFS(G,1,Vnum,Enum,visited);
 
-    if(Vnum==G.numvertexes&&G.numedges==2*(Enum-1)){
+    if(Vnum==G->numvertexes&&G->numedges==2*(Enum-1)){
         return 1;
     }
     else 
         return 0;
 }
 
-void DFS(GraphAdjList &G,int v,int &Vnum,int &Enum,bool visited[]){
+void DFS(GraphAdjList *G,int v,int &Vnum,int &Enum,bool visited[]){
     visited[v] = true;
     Vnum++;
     int w = FirstNeighbor(G,v);
     while(w!=-1){
         Enum++;
         if(!visited[w]){
-        w = NextNeighbor(G,v);
+        w = NextNeighbor(G,v,visited);
         }
     }
 }
