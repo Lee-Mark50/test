@@ -81,6 +81,15 @@ int NextNeighbor(GraphAdjList *G,int v){
         return -1;
 }
 
+int ValueFromA_B(GraphAdjList *G,int u,int v){
+    EdgeNode *edge = G->adjList[u].firstedge;
+    while(edge != NULL){
+        if(edge->adjvex = v){
+            return edge->weight;
+        }
+    }
+    return -1;
+}
 
 //---课后第二题-----------------------------------------------------------------------------------
 

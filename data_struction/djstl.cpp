@@ -30,8 +30,8 @@ const int V = 5; // 假设图中有5个顶点
 int minDistance(vector<int>& dist, vector<bool>& visited) {
     int minDist = INT_MAX;
     int minIndex = -1;
-
-    for (int v = 0; v < V; v++) {
+    //初始均置最大值和-1，表示没有最短路径、最小结点为-1
+    for (int v = 0; v < V; v++) {//对
         if (!visited[v] && dist[v] < minDist) {
             minDist = dist[v];
             minIndex = v;
@@ -90,6 +90,8 @@ visited 数组用于标记顶点是否已经被访问。
 void dijkstra(int graph[V][V], int src) {
     vector<int> dist(V, INT_MAX);
     vector<bool> visited(V, false);
+    //vector<int>使用了C++中的标准容器 vector，它具有动态大小调整的能力。
+    //这意味着你可以在运行时更改数组的大小，而不需要事先知道数组的大小。这在需要动态调整数组大小的情况下非常有用。
 
     dist[src] = 0;
 
@@ -107,6 +109,25 @@ void dijkstra(int graph[V][V], int src) {
 
     printSolution(dist);
 }
+
+void djstl(int Graph[V][V],int h){
+    int dist[V]={INT_MAX};
+    bool visited[V]={false,false,false,false,false};
+    dist[h] = 0;
+    for(int i=0; i<V-1; i++){
+        int u = minDistance(dist,visited[V]);
+        visited[u]=true;
+
+        for(int v = 0; v < V ; v++){
+            if(!visited[v] && Graph[u][v] && dist[u] != INT_MAX && dist[u]+Graph[u][v]<dist[v])
+            //这里判断条件比较复杂，1，判断v，也就是终点v未遍历；2，判断有u-v路径；3，判断初始点到路径u长度不是最大值；4，初始点到u的距离+u-v距离小于dist存储的初始到v的距离
+            //满足如上条件后进行更新，即
+            dist[v] = dist[u] + Graph[u][v];
+        }
+    }
+    printSolution(dist);
+}
+
 
 int main() {
     int graph[V][V] = {
