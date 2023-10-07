@@ -82,8 +82,3 @@ void queue1(SqQueue Q){
     //Q为队列，S为空栈，实现元素逆置
     
 }
-
-
-int main(){
-    cout<<endl;
-}

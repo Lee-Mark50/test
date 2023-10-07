@@ -62,7 +62,7 @@ int FirstNeighbor(GraphAdjList *G,int v){
 
 
 //查找v有无下结点，找到返回结点下标，未找到返回-1
-int NextNeighbor(GraphAdjList *G,int v,bool visited[]){
+int NextNeighbor(GraphAdjList *G,int v){
     if(v >= 0 && v < G->numvertexes){
         //node1 的声明应该使用箭头 -> 而不是点 . 来访问结构体成员。
         //应该写成 EdgeNode *node1 = G->adjList[v].firstedge;，
@@ -91,7 +91,7 @@ bool Istree(GraphAdjList *G){
         visited[i]=false;
     }
     int Vnum=0,Enum=0;
-    DFS(G,1,Vnum,Enum,visited);
+    DFS(G,1,Vnum,Enum);
 
     if(Vnum==G->numvertexes&&G->numedges==2*(Enum-1)){
         return 1;
@@ -100,14 +100,14 @@ bool Istree(GraphAdjList *G){
         return 0;
 }
 
-void DFS(GraphAdjList *G,int v,int &Vnum,int &Enum,bool visited[]){
+void DFS(GraphAdjList *G,int v,int &Vnum,int &Enum){
     visited[v] = true;
     Vnum++;
     int w = FirstNeighbor(G,v);
     while(w!=-1){
         Enum++;
         if(!visited[w]){
-        w = NextNeighbor(G,v,visited);
+        w = NextNeighbor(G,v);
         }
     }
 }
