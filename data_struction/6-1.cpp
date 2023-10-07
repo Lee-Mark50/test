@@ -44,14 +44,15 @@ void InitGraph(Graph *G){
 }
 
 void DisplayGraph(Graph *G) {
-    cout << "Vertices: ";
+    cout << "Vertices and Mutrix below:\n";
+    cout << "  ";
     for (int i = 0; i < G->numver; i++) {
-        cout << G->vexs[i] << " ";
+        cout <<G->vexs[i] << " ";
     }
     cout << endl;
 
-    cout << "Adjacency Matrix:" << endl;
     for (int i = 0; i < G->numver; i++) {
+            cout << G->vexs[i] << " ";
         for (int j = 0; j < G->numver; j++) {
             cout << G->arc[i][j] << " ";
         }
@@ -65,3 +66,18 @@ int main(){
     InitGraph(&g1);
     DisplayGraph(&g1);
 }
+/*
+Vertices: 
+a b c d e f g h i j 
+Adjacency Matrix:
+0 1 0 0 0 0 0 0 0 0
+1 0 2 0 0 0 0 0 0 0
+0 2 0 3 0 0 0 0 0 0
+0 0 3 0 4 0 0 0 0 0
+0 0 0 4 0 5 0 0 0 0
+0 0 0 0 5 0 6 0 0 0
+0 0 0 0 0 6 0 7 0 0
+0 0 0 0 0 0 7 0 8 0
+0 0 0 0 0 0 0 8 0 9
+0 0 0 0 0 0 0 0 9 0
+*/
