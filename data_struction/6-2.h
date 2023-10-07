@@ -85,6 +85,18 @@ int NextNeighbor(GraphAdjList *G,int v){
 //---课后第二题-----------------------------------------------------------------------------------
 
 
+void DFS(GraphAdjList *G,int v,int &Vnum,int &Enum){
+    visited[v] = true;
+    Vnum++;
+    int w = FirstNeighbor(G,v);
+    while(w!=-1){
+        Enum++;
+        if(!visited[w]){
+            DFS(G,w,Vnum,Enum);
+        }
+        w = NextNeighbor(G,v);
+    }
+}
 
 bool Istree(GraphAdjList *G){
     for(int i=0;i<G->numvertexes;i++){
@@ -98,16 +110,4 @@ bool Istree(GraphAdjList *G){
     }
     else 
         return 0;
-}
-
-void DFS(GraphAdjList *G,int v,int &Vnum,int &Enum){
-    visited[v] = true;
-    Vnum++;
-    int w = FirstNeighbor(G,v);
-    while(w!=-1){
-        Enum++;
-        if(!visited[w]){
-        w = NextNeighbor(G,v);
-        }
-    }
 }

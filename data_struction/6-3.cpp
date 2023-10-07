@@ -9,28 +9,29 @@ using namespace std;
 
 bool visited[maxsize];
 
-typedef struct{
-    int adjvex;
-    int weight;
-    struct edgeNode *next;
-}edgeNode;
+/* typedef struct{
+//     int adjvex;
+//     int weight;
+//     struct edgeNode *next;
+// }edgeNode;
 
-typedef struct{
-    char Edgedata;
-    struct edgeNode *first;
-}VertexNode,AdjList[maxsize];
+// typedef struct{
+//     char Edgedata;
+//     struct edgeNode *first;
+// }VertexNode,AdjList[maxsize];
 
-typedef struct{
-    int Vertexnum,Edgenum;
-    AdjList AdjList;
-}GraphAdjList;
+// typedef struct{
+//     int Vertexnum,Edgenum;
+//     AdjList AdjList;
+// }GraphAdjList;
+*/
 
 void visit(int v){
     printf("已访问%d结点",v);
 }
 
 void BFSTrverse(GraphAdjList *G,SqQueue &Q){
-    for (int i = 0; i < G->Vertexnum; i++)
+    for (int i = 0; i < G->numvertexes; i++)
     {
         if(!visited[i]){
             BFS(G,i,Q);
