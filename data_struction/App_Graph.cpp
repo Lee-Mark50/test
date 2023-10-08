@@ -26,7 +26,7 @@ void Djstl(GraphAdjList *graph, int start){
     visited[start]=1;
     for(int u = 0;u<graph->numvertexes-1;u++){
         visited[u]=1;
-        distancemin(visited,dist);//得到最短路径
+        //distancemin(visited,dist);//得到最短路径
         for(int v = 0; v < graph->numvertexes;v++){
             // if(!visited[v] && graph[u][v] && dist[u]!=INT_MAX && dist[u]+graph[u][v]<dist[v]){
             //     dist[v] = graph[u][v]+dist[u];
