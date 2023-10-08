@@ -1,5 +1,5 @@
 // bool the alogrithm named topolohicalsort which used to sort the graph with matrix.
-// startwhith fake code
+// start whith fake code
 
 /*
     AOV 网
@@ -10,7 +10,7 @@
 
 
     逻辑拓扑排序
-        
+
 
 */
 
