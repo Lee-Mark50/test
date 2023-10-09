@@ -22,5 +22,5 @@ int QuickSort(int a[numA]){
     }
 
 
-    return b;
+
 }

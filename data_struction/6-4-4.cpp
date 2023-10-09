@@ -14,24 +14,24 @@
 
 */
 
-bool TopologicalSort(Graph G){
-    InitStack(S);
-    int i;
-    for(i=0;i<G.vexnum;i++){
-        if(indegree[i]==0)
-        Push(S,i);
-    }
-    int count=0;
-    while(!IsEmpty(S)){
-        Pop(S);
-        print[count++]=i;
-        for(p=G.vertices[i].firstarc;p;p=p->nextarc){
-            v=p->adjvex;
-            Push(S,v);
-        }
-    }
-    if(count<G.vexnum)
-        return false;
-    else
-        return true;
-}
+// bool TopologicalSort(Graph G){
+//     InitStack(S);
+//     int i;
+//     for(i=0;i<G.vexnum;i++){
+//         if(indegree[i]==0)
+//         Push(S,i);
+//     }
+//     int count=0;
+//     while(!IsEmpty(S)){
+//         Pop(S);
+//         print[count++]=i;
+//         for(p=G.vertices[i].firstarc;p;p=p->nextarc){
+//             v=p->adjvex;
+//             Push(S,v);
+//         }
+//     }
+//     if(count<G.vexnum)
+//         return false;
+//     else
+//         return true;
+// }
