@@ -1,0 +1,8 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(10,12): error C2143: 语法错误: 缺少“]”(在“;”的前面)
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(10,19): error C2059: 语法错误:“]”
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(10,20): error C2238: 意外的标记位于“;”之前
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(49,7): error C2562: “blanket”:“void”函数返回值
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(31): message : 参见“blanket”的声明
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(50,11): error C2562: “blanket”:“void”函数返回值
+C:\Users\橙馥\Desktop\新学期数据结构作业\栈的学习2\ConsoleApplication1.cpp(31): message : 参见“blanket”的声明
