@@ -109,13 +109,13 @@ void dijkstra(int graph[V][V], int src) {
 
     printSolution(dist);
 }
-
+/*
 void djstl(int Graph[V][V],int h){
     int dist[V]={INT_MAX};
     bool visited[V]={false,false,false,false,false};
     dist[h] = 0;
     for(int i=0; i<V-1; i++){
-        int u = minDistance(dist,visited[V]);
+        int u = minDistance(dist,visited);
         visited[u]=true;
 
         for(int v = 0; v < V ; v++){
@@ -127,6 +127,7 @@ void djstl(int Graph[V][V],int h){
     }
     printSolution(dist);
 }
+*/
 
 
 int main() {
