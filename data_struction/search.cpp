@@ -77,6 +77,8 @@ int chazhiSearch(SSTable *T,keyType key)
 
 
 int feibonaqieSearch(SSTable *T,keyType key){
+    //实现就不写了，
+    //斐波那契查找与折半查找很相似，他是根据斐波那契序列的特点对有序表进行分割的。他要求开始表中记录的个数为某个斐波那契数小1，及n=F(k)-1；开始将k值与第F(k-1)位置的记录进行比较(及mid=low+F(k-1)-1).
     return Fibonacci1(key);
 }
 
