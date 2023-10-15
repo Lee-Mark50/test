@@ -28,7 +28,7 @@ int zhebanSearch(SSTable *T,keyType key){
         if(T->elem[mid].key=key){
             return mid;
         }
-        else if(T->elem[mid].key<key){//这一步看出这查找是有序的
+        else if(T->elem[mid].key<key){//这一步看出这个查找是有序的
             head = mid+1;
         }
         else if(T->elem[mid].key>key){
@@ -40,6 +40,13 @@ int zhebanSearch(SSTable *T,keyType key){
     return 0;
 }
 
+int fenkuaiSearch(keyType key){
+    //类似于希尔排序算法，将查找表分为若干子块，块内可无序，块间元素有序（第一个块的最大关键字小于第二个块的所有记录关键字）再建立索引表
+    //分块查找两步——第一步确定待查记录所在块，可以顺序查找或者折半；第二步块内顺序查找 http://data.biancheng.net/view/123.html
+    int a[14] = {88,24,72,61,21,6,32,11,8,31,22,83,78,54};
+    int block = 4;
+
+}
 
 int chazhiSearch(SSTable *T,keyType key)
 {
