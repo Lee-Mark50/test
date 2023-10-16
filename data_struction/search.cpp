@@ -2,6 +2,8 @@
 #include<iostream>
 #include"SStable.h"
 #include"tool.h"
+#include"HashTable.h"
+
 #define keyType int
 
 using namespace std;
@@ -46,6 +48,11 @@ int fenkuaiSearch(keyType key){
     int a[14] = {88,24,72,61,21,6,32,11,8,31,22,83,78,54};
     int block = 4;
 
+
+}
+
+int HashSearch(){
+    cout<<"测试";
 }
 
 int chazhiSearch(SSTable *T,keyType key)
