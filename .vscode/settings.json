@@ -4,6 +4,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "stack": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "cstdlib": "cpp",
+        "algorithm": "cpp"
     }
 }
