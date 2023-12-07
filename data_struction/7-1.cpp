@@ -20,6 +20,10 @@ int QuickSort(int a[numA],int start, int end){
   QuickSort(a,left+1,end);
 }
 
+void MapHashSort(){
+  
+}
+
 /*此处突然想到能否先找个最大的，然后再找最小的，依次排除，这有局限性：num必须比较小，最大最小难找，二次比较难
               但有点在于思路清晰
 
