@@ -1,9 +1,11 @@
 #include<iostream>
 #include"7-1.h"
+#include"tool.h"
 
 using namespace std;
 
-int QuickSort(int a[numA],int start, int end){
+int QuickSort(int a[numA],int start, int end)
+{
   if(start >= end || end+1 <= 0) return;
 
   int mid = a[end];
@@ -32,3 +34,54 @@ void MapHashSort(){
 
               再更
 */
+
+int SierSort(int a[numA]){
+  //
+  int i;
+
+  return i;
+}
+
+void MaopaoSort(int a[numA]){
+  //冒泡的关键就是冒得泡向后依次比较值变大（泡变大），选出，也就是选定最大的一个值，依次类推
+  int temp;
+  for(int i=numA;i>0;i--){
+    for(int j=0;j<i;j++){
+      if(a[j] > a[j+1]){
+        temp = a[j];
+        a[j] = a[j+1];
+        a[j+1] = temp;
+      }
+    }
+  };
+}
+int TuopuSort(int a[numA]){
+  //
+
+}
+
+void interMergeSort(int arr[numA],int temp[numA],int left,int right){
+    if(left<right){
+        int middle = (left+right)/2;
+        interMergeSort(arr,temp,left,middle);
+        interMergeSort(arr,temp,middle+1,right);
+        
+    }
+}
+void GuibingSort(int a[numA]){
+  //归并排序的算法是分治法，一种递归实现，一种迭代实现
+  int temp[numA];
+  interMergeSort(a,temp,0,numA-1);
+}
+void mergeSortArray(int arr[numA],int temp[numA],int left,int middle,int right){
+  int i=left;
+  int j=middle+1;
+  int k=0;
+  while(true){
+    temp[k++] = arr[i];
+  }
+}
+
+int main(){
+
+}

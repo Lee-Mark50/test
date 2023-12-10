@@ -22,5 +22,12 @@ void Sort();
 
 void TuopuSort();
 
+void DuiSort();
+
+void GuibingSort();
+
+void JishuSort();
+
+
 
 #endif
