@@ -67,10 +67,33 @@ void KMP_Algorithm(){
 #define MAXLEN 255
 typedef struct 
 {
-    char ch{MAXLEN};
+    char ch[MAXLEN];
     int length;
 }SString;
 
+
+//2023.12.19 正确理解前后缀子串，next数组，能减少匹配次数的含义，才是理解并运用kmp算法的根本
+int next(SString pattern){
+    int next[pattern.length];
+    for(int j=0,i=1;i<pattern.length;i++){
+        //ij都是对于匹配串而言，也就是都是指向next数组的指针
+        
+        while(pattern.ch[i]!=pattern.ch[j] && j>0)
+        {
+            j = next[j-1];
+            //两个不相等的时候，也就是下一个不一样字符，都是0
+            //详细解释这一句代码：当i与j个没匹配到，此时要i继续向前，j要向回，回到的位置应该是模式串中，前面(j-1个数)因为匹配到相等，因为next[j-1]代表数值是0，j-1有无相同序列，若有，返回next[j-1]对应前面相等的数的下一个
+        }
+
+
+        if(pattern.ch[i]=pattern.ch[j])
+            j++;
+            //相等，就是接下来匹配失败从你开始，赋值出现次数
+        next[j]=j;
+        if(j=pattern.length) return i-j;
+    }
+
+}
 
 void SSting(SString S,SString T){
     /*
@@ -102,7 +125,7 @@ void SSting(SString S,SString T){
 int B_Index(SString S,SString T){
     int i=1,j=1;
     while(i<S.length&& j<T.length){
-        if(S.ch[i]==T.ch[j]){
+        if(S.ch[i]=T.ch[j]){
             //匹配到对应元素
             ++i;
             ++j;
